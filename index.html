@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин комплектуючих для ПК</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 id="title">ПК Комплектуючі</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" id="nav-home">Головна</a></li>
+                <li><a href="#catalog" id="nav-catalog">Каталог</a></li>
+                <li><a href="#about" id="nav-about">Про нас</a></li>
+                <li><a href="#contact" id="nav-contact">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <button onclick="setLanguage('uk')">UA</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 id="hero-title">Кращі комплектуючі для вашого ПК</h1>
+        <p id="hero-desc">Якість, потужність, доступність</p>
+        <a href="#catalog" class="btn" id="hero-btn">Переглянути каталог</a>
+    </div>
+</section>
+
+<section id="catalog" class="products">
+    <div class="container">
+        <h2 id="catalog-title">Каталог товарів</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="amd-ryzen-5-5600x-3746ghz-32mb-sam4-box-100-100000065box.png" alt="Ryzen 5600X">
+                <h3 id="product1-name">Процесор Ryzen 5600X</h3>
+                <p id="product1-price">Ціна: 7,500 грн</p>
+                <a href="#" class="btn add-to-cart" data-id="1" data-name="Ryzen 5600X" data-price="7500">Додати у кошик</a>
+            </div>
+            <div class="product-card">
+                <img src="gigabyte-geforce-rtx-4060-ti-aero-oc-8192mb-gv-n406taero-oc-8gd.png" alt="RTX 4060ti">
+                <h3 id="product2-name">Відеокарта RTX 4060ti</h3>
+                <p id="product2-price">Ціна: 18,000 грн</p>
+                <a href="#" class="btn add-to-cart" data-id="2" data-name="RTX 4060ti" data-price="18000">Додати у кошик</a>
+            </div>
+            <div class="product-card">
+                <img src="kingston-kc3000-3d-nand-tlc-1tb-m2-2280-pci-e-nvme-x4-skc3000s1024g.jpg" alt="SSD Kingston">
+                <h3 id="product3-name">SSD Kingston 1TB</h3>
+                <p id="product3-price">Ціна: 4,189 грн</p>
+                <a href="#" class="btn add-to-cart" data-id="3" data-name="SSD Kingston 1TB" data-price="4189">Додати у кошик</a>
+            </div>
+            <div class="product-card">
+                <img src="368009230.webp" alt="Corsair RAM">
+                <h3 id="product4-name">ОЗП Kingston Fury DDR4 32ГБ</h3>
+                <p id="product4-price">Ціна: 3,200 грн</p>
+                <a href="#" class="btn add-to-cart" data-id="4" data-name="ОЗП Kingston Fury DDR4 32ГБ" data-price="3200">Додати у кошик</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2 id="about-title">Про нас</h2>
+        <p id="about-desc">Ми пропонуємо найкращі комплектуючі для вашого ПК. У нас ви знайдете все необхідне для складання потужного і надійного комп'ютера.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 id="contact-title">Контакти</h2>
+        <p id="contact-desc">Зв'яжіться з нами за номером: +38 (099) 123-45-67 або напишіть на пошту: support@pcparts.com</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p id="footer-text">&copy; 2024 Магазин ПК Комплектуючих. Всі права захищені.</p>
+    </div>
+</footer>
+
+<script>
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', function (event) {
+    event.preventDefault(); // Запобігає переходу за посиланням
+
+    const id = this.dataset.id;
+    const name = this.dataset.name;
+    const price = this.dataset.price;
+
+    // Додаємо товар у локальний кошик (Local Storage)
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ id, name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`${name} додано до кошика!`);
+  });
+});
+</script>
+
+</body>
+</html>
