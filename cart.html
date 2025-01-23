@@ -22,30 +22,10 @@
     </div>
 </header>
 
-<section class="cart">
-    <div class="container">
-        <h2>Товари у вашому кошику</h2>
-        <div class="cart-items">
-            <div class="product-card">
-                <img src="amd-ryzen-5-5600x-3746ghz-32mb-sam4-box-100-100000065box.png" alt="Ryzen 5600X">
-                <h3>Процесор Ryzen 5600X</h3>
-                <p>Ціна: 7,500 грн</p>
-                <p>Кількість: 1</p>
-                <a href="#" class="btn remove-item">Видалити</a>
-            </div>
-            <div class="product-card">
-                <img src="gigabyte-geforce-rtx-4060-ti-aero-oc-8192mb-gv-n406taero-oc-8gd.png" alt="RTX 4060ti">
-                <h3>Відеокарта RTX 4060ti</h3>
-                <p>Ціна: 18,000 грн</p>
-                <p>Кількість: 1</p>
-                <a href="#" class="btn remove-item">Видалити</a>
-            </div>
-        </div>
-
-        <div class="cart-summary">
-            <h3>Загальна сума: 25,500 грн</h3>
-            <a href="checkout.html" class="btn">Оформити замовлення</a>
-        </div>
+<section class="cart" >
+    <div class="container" >
+        <div id="cart-items" style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;"></div>
+        <h3>Загальна сума: <span id="total-price">0</span> грн</h3>
     </div>
 </section>
 
@@ -55,5 +35,7 @@
     </div>
 </footer>
 
+
+<script src="cart.js"></script>
 </body>
 </html>
